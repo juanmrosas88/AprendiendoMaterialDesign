@@ -7,15 +7,27 @@
     tools:context=".FirstFragment"
     android:background="@color/colorPrimaryDark">
 
-    <TextView
-        android:id="@+id/textview_first"
-        android:layout_width="wrap_content"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/sfiMiIndicadorRefresh"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Primer fragment con \n colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@id/button_first"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ListView
+            android:id="@+id/lstMiLista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        </ListView>
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+   <!-- android:layout_width="wrap_content" ANCHO
+    android:layout_height="wrap_content" ALTO -->
+
 
     <Button
         android:id="@+id/button_first"
@@ -25,5 +37,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_first" />
+        android:layout_marginBottom="300dp"
+       />
+
+    <Button
+        android:id="@+id/btnMiBoton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/texto_boton_click"
+        android:theme="@style/MiBotonRaised"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
