@@ -18,4 +18,9 @@
         <item>Marte</item>
         <item>Jupiter</item>
     </string-array>
+
+    <string name="titulo_tarjeta">La llave de la programacion</string>
+    <string name="descripcion_tarjeta">Es estudiar cada dia un poco</string>
+
+
 </resources>
