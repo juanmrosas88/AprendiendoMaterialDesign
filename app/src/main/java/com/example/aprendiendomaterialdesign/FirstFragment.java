@@ -44,13 +44,14 @@ public class FirstFragment extends Fragment {
 
 
     }
+
     @Override
     public void onActivityCreated(Bundle state) {
         super.onActivityCreated(state);
         lstMiLista = (ListView)getView().findViewById(R.id.lstMiLista);
 
-        String[] planetas = getResources().getStringArray(R.array.planetas);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_expandable_list_item_1,planetas);
+        String[] mascotas = getResources().getStringArray(R.array.mascotas);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_expandable_list_item_1,mascotas);
         lstMiLista.setAdapter(adapter);
         lstMiLista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -74,8 +75,8 @@ public class FirstFragment extends Fragment {
 
     }
     public  void refrescandoContenido(){
-        String[] planetas = getResources().getStringArray(R.array.planetas);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_expandable_list_item_1,planetas);
+        String[] mascotas = getResources().getStringArray(R.array.mascotas);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_expandable_list_item_1,mascotas);
         lstMiLista.setAdapter(adapter);
         sfiMiIndicadorRefresh.setRefreshing(false);
     }

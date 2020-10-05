@@ -1,5 +1,6 @@
 package com.example.aprendiendomaterialdesign;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        Toast.makeText(this, getResources().getString(R.string.onCreate), Toast.LENGTH_SHORT).show();
 
         agregarFAB();
 
@@ -68,10 +71,55 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Toast.makeText(this, "hoola mundo", Toast.LENGTH_SHORT).show();
+
+           Intent i = new Intent(MainActivity.this, ListadoMascotasActivity.class);
+           startActivity(i);
+
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Toast.makeText(this, getResources().getString(R.string.onStart), Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(this, getResources().getString(R.string.onResume), Toast.LENGTH_SHORT).show();
+    }
+
+    //Actividad corriendo
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Toast.makeText(this, getResources().getString(R.string.onRestart), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Toast.makeText(this, getResources().getString(R.string.onPause), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Toast.makeText(this, getResources().getString(R.string.onStop), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Toast.makeText(this, getResources().getString(R.string.onDestroy), Toast.LENGTH_SHORT).show();
+    }
+
+
 }
